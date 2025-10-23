@@ -11,6 +11,11 @@ void init_gpio_uart(void) {
 
 void init_uart(void) {
     RCC->APB1ENR1 |= (1 << 17);  // Enable USART2
+    USART2->CR1 &= ~(1 << 0);
+    USART2->CR1 &= ~(1u << 28);
+    USART2->CR1 |= (1u << 12);
+    USART2->CR1 |= (1u << 10);
+    USART2->CR1 |= (1u << 9);
     USART2->BRR = (HSI_FREQ + (BAUD_RATE/2)) / BAUD_RATE;
     USART2->CR1 = (1 << 3) | (1 << 2);  // TE | RE
     USART2->CR1 |= (1 << 0);            // UE

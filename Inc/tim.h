@@ -37,7 +37,7 @@ typedef struct {
 #define PWM_FREQUENCY       1000U      // 1 kHz PWM
 #define PWM_PERIOD          (TIM_PCLK_FREQ_HZ / PWM_FREQUENCY)
 #define PWM_DUTY_CYCLE      50         // 50% duty cycle
-#define PWM_PIN             6U         // PA6 = TIM3_CH1
+#define PWM_PIN             4U         // PA6 = TIM3_CH1
 
 #define PWM_DC_TO_CCR(DC) ((PWM_PERIOD * (DC)) / 100) // Macro para calcular CCR
 
