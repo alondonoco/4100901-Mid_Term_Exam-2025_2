@@ -17,6 +17,7 @@
 #define GPIO_PUPD_UP        0x01
 #define GPIO_PUPD_DOWN      0x02
 
+
 void gpio_init(GPIO_Typedef_t * GPIO, uint8_t pin, uint8_t mode, uint8_t type, uint8_t speed, uint8_t pupd, uint8_t initial_value)
 {
     GPIO->MODER &= ~(3 << (pin*2));           // Limpia bits
